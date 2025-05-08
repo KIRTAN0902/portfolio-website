@@ -1,16 +1,18 @@
 services:
   - type: web
-    name: portfolio-backend
+    name: portfolio-web
     env: python
     buildCommand: |
       cd client
       npm install
       npm run build
     startCommand: gunicorn server.app:app
-    envVars:
-      - key: FLASK_ENV
-        value: production
     buildFilter:
       paths:
         - client/**
         - server/**
+        - render.yaml
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+    staticPublishPath: client/dist
