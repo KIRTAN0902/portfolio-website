@@ -1,23 +1,20 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
-  base: "/",
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
-      "@server": path.resolve(__dirname, "../server"),
+      '@': path.resolve(__dirname, 'src'), // ✅ Tells Vite that "@" means "client/src"
     },
   },
-  plugins: [react()],
   build: {
-    outDir: path.resolve(__dirname, "../server/dist"),
-    target: "esnext",
+    outDir: path.resolve(__dirname, '../server/dist'),
     emptyOutDir: true,
   },
   server: {
-    hmr: true,
-    port: 3000,
+    port: 5173,
+    open: true,
   },
-});
+})
