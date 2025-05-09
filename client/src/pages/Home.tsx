@@ -1,10 +1,10 @@
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/home/Hero";
-import About from "@/components/home/About";
-import Services from "@/components/home/Services";
-import Portfolio from "@/components/home/Portfolio";
-import Contact from "@/components/home/Contact";
-import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/navbar";
+import Hero from "@/components/home/hero";
+import About from "@/components/home/about";
+import Services from "@/components/home/services";
+import Portfolio from "@/components/home/portfolio";
+import Contact from "@/components/home/contact";
+import Footer from "@/components/layout/footer";
 
 const Home = () => {
   return (
