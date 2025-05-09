@@ -4,6 +4,7 @@ services:
     env: python
     buildCommand: "cd ../client && npm install && npm run build"
     startCommand: "gunicorn app:app"
+    workingDir: server  # ✅ Tell Render to run from the server folder
     buildFilter:
       paths:
         - client/**
