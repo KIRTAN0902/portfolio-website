@@ -1,6 +1,17 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "@/App"; // ✅ Updated to use alias for consistency
-import "@/index.css"; // ✅ Updated to use alias
-import "@/styles/globals.css"; // ✅ Updated to use alias
+import App from "@/App"; // ✅ Already correct
+import "@/styles/globals.css"; // Load base styles first
+import "@/index.css"; // Local overrides/styles after globals
 
-createRoot(document.getElementById("root")!).render(<App />);
+const container = document.getElementById("root");
+
+if (!container) {
+  throw new Error("Root container not found");
+}
+
+createRoot(container).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
