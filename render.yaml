@@ -2,11 +2,8 @@ services:
   - type: web
     name: portfolio-web
     env: python
-    buildCommand: |
-      cd client
-      npm install
-      npm run build
-    startCommand: gunicorn server.app:app
+    buildCommand: "cd ../client && npm install && npm run build"
+    startCommand: "gunicorn app:app"
     buildFilter:
       paths:
         - client/**
@@ -15,4 +12,3 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.10
-    staticPublishPath: client/dist
