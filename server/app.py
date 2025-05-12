@@ -14,25 +14,31 @@ DIST_DIR = Path(__file__).resolve().parent / "dist"
 app = Flask(__name__, static_folder=str(DIST_DIR), static_url_path='')
 CORS(app)
 
-# 🔁 Serve frontend files (production)
+# 🔁 Serve frontend files (React + Vite)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve_frontend(path):
     full_path = DIST_DIR / path
+
+    # ✅ Debug logs
+    print(f"📦 Requested path: {path}")
+    print(f"📁 Resolved full path: {full_path}")
+    print(f"📄 index.html exists? {DIST_DIR.joinpath('index.html').exists()}")
+
     if path != "" and full_path.exists():
         return send_from_directory(str(DIST_DIR), path)
     else:
-        # Serve index.html if the requested path doesn't exist
+        # Serve index.html as fallback for React Router
         return send_from_directory(str(DIST_DIR), 'index.html')
 
-# ❗ Global error handler (for catching unexpected errors)
+# ❗ Global error handler
 @app.errorhandler(Exception)
 def handle_error(error):
     status_code = getattr(error, 'code', 500)
     message = str(error) or "Internal Server Error"
     return jsonify({"success": False, "message": message}), status_code
 
-# 🚀 Entry point for Flask app
+# 🚀 Run the Flask app (only locally, not used in Render/Gunicorn)
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Fallback port
-    app.run(host='0.0.0.0', port=port, debug=False)  # Debug off for production
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
