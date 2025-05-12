@@ -2,9 +2,9 @@ services:
   - type: web
     name: portfolio-web
     env: python
-    buildCommand: "cd ../client && npm install && npm run build"
+    buildCommand: "cd client && npm install && npm run build"
     startCommand: "gunicorn app:app"
-    workingDir: server  # ✅ Tell Render to run from the server folder
+    workingDir: server
     buildFilter:
       paths:
         - client/**
