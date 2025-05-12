@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        beige: '#f5f5dc', // <-- ✅ ADD THIS LINE
+        'grid-background': '#f2f2f2',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         muted: 'hsl(var(--muted))',
