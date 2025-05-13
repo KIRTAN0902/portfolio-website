@@ -7,9 +7,19 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '3rem',
+        xl: '4rem',
+        '2xl': '5rem',
+      },
+    },
     extend: {
       colors: {
-        beige: '#f5f5dc', // <-- ✅ ADD THIS LINE
+        beige: '#f5f5dc',
         'grid-background': '#f2f2f2',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -35,6 +45,9 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      screens: {
+        'xs': '480px', // ✅ Add extra small screen breakpoint
       },
     },
   },

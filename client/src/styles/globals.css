@@ -9,12 +9,11 @@ body {
     linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
   background-size: 16px 16px;
   background-repeat: repeat;
+  margin: 0;
+  padding: 0;
 }
 
-.main-content {
-  /* Removed background styles to let body grid show through */
-}
-
+/* Typography */
 .font-pixel {
   font-family: 'Press Start 2P', cursive;
 }
@@ -23,6 +22,7 @@ body {
   font-family: 'VT323', monospace;
 }
 
+/* Pixel Border */
 .pixel-border {
   position: relative;
   border: 4px solid #000;
@@ -40,6 +40,7 @@ body {
   z-index: -1;
 }
 
+/* Button */
 .pixel-button {
   position: relative;
   padding: 12px 20px;
@@ -47,7 +48,6 @@ body {
   color: #000;
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
-  text-align: center;
   text-transform: uppercase;
   border: 4px solid #000;
   transition: all 0.1s ease;
@@ -64,6 +64,7 @@ body {
   box-shadow: none;
 }
 
+/* Navigation */
 .pixel-nav-item {
   position: relative;
   display: inline-block;
@@ -91,11 +92,13 @@ body {
   width: 100%;
 }
 
+/* Cards */
 .pixel-card {
   background-color: #f5f5dc;
   border: 4px solid #000;
   transition: all 0.2s;
   box-shadow: 8px 8px 0 #000;
+  padding: 20px;
 }
 
 .pixel-card:hover {
@@ -103,7 +106,9 @@ body {
   box-shadow: 4px 4px 0 #000;
 }
 
-.pixel-input {
+/* Inputs */
+.pixel-input,
+.pixel-textarea {
   background-color: #f5f5dc;
   border: 4px solid #000;
   padding: 8px 16px;
@@ -111,9 +116,11 @@ body {
   font-size: 20px;
   box-shadow: 4px 4px 0 #000;
   transition: all 0.2s;
+  width: 100%;
 }
 
-.pixel-input:focus {
+.pixel-input:focus,
+.pixel-textarea:focus {
   outline: none;
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 #000;
@@ -121,22 +128,10 @@ body {
 
 .pixel-textarea {
   resize: none;
-  background-color: #f5f5dc;
-  border: 4px solid #000;
   padding: 12px;
-  font-family: 'VT323', monospace;
-  font-size: 20px;
-  box-shadow: 4px 4px 0 #000;
-  transition: all 0.2s;
 }
 
-.pixel-textarea:focus {
-  outline: none;
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 #000;
-}
-
-/* Mobile menu */
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   transition: all 0.3s;
@@ -146,7 +141,7 @@ body {
   display: block;
 }
 
-/* Pixelated hover effect */
+/* Portfolio Hover Overlay */
 .portfolio-item {
   position: relative;
   overflow: hidden;
@@ -171,6 +166,7 @@ body {
   opacity: 1;
 }
 
+/* Pixel Bounce Animation */
 .animate-pixel-bounce {
   animation: pixel-bounce 0.5s ease-in-out infinite alternate;
 }
@@ -181,5 +177,72 @@ body {
   }
   100% {
     transform: translateY(-4px);
+  }
+}
+
+/* -----------------------------------------
+   🔁 RESPONSIVE DESIGN
+------------------------------------------ */
+@media (max-width: 1024px) {
+  .pixel-button {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  .pixel-input,
+  .pixel-textarea {
+    font-size: 18px;
+  }
+
+  .pixel-nav-item {
+    font-size: 10px;
+    margin: 0 6px;
+  }
+
+  .pixel-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pixel-button {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+
+  .pixel-nav-item {
+    display: block;
+    margin: 6px 0;
+    text-align: center;
+  }
+
+  .pixel-card {
+    box-shadow: 6px 6px 0 #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .pixel-button {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  .pixel-input,
+  .pixel-textarea {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .pixel-card {
+    padding: 12px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .font-pixel {
+    font-size: 12px;
+  }
+
+  .font-pixel-text {
+    font-size: 16px;
   }
 }
