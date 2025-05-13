@@ -1,7 +1,7 @@
 # Node.js
 client/node_modules/
 client/dist/
-+ client/.next/             
+client/.next/
 
 # Logs
 logs/
@@ -13,6 +13,7 @@ yarn-error.log*
 # Dependency directories
 server/__pycache__/
 server/instance/
+server/venv/
 server/.env
 
 # Python
@@ -22,14 +23,13 @@ server/.env
 *.env
 *.venv
 *.egg-info/
-+ server/venv/              
 
 # Vite
 client/.vite/
 client/.env.local
 client/.env.development
 client/.env.production
-+ client/.DS_Store          
+client/.DS_Store
 
 # IDE/Editor
 .vscode/
@@ -43,6 +43,5 @@ Thumbs.db
 
 # Build artifacts
 server/dist/
-client/dist/
-+ *.tar.gz
-+ *.zip
+*.tar.gz
+*.zip
