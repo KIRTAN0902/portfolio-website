@@ -6,15 +6,15 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // ✅ Allows "@/..." imports
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, '../server/dist'), // ✅ Outputs directly to Flask static folder
+    outDir: path.resolve(__dirname, '../server/dist'), // ✅ Output to Flask's static folder
     emptyOutDir: true,
   },
   server: {
-    host: '0.0.0.0', // ✅ Allows access from network or Docker/Render
+    host: '0.0.0.0',
     port: 5173,
     open: true,
     strictPort: true,

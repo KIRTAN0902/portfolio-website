@@ -2,17 +2,24 @@ services:
   - type: web
     name: portfolio-web
     env: python
+    workingDir: server
+
     buildCommand: |
+      echo "🔧 Building client app..."
       cd ../client
       npm install
       npm run build
-    startCommand: gunicorn app:app
-    workingDir: server
+
+    startCommand: |
+      echo "🚀 Starting Flask app..."
+      gunicorn app:app
+
     buildFilter:
       paths:
         - client/**
         - server/**
         - render.yaml
+
     envVars:
       - key: PYTHON_VERSION
         value: 3.10
