@@ -3,7 +3,7 @@ services:
     name: portfolio-web
     env: python
     buildCommand: |
-      cd client
+      cd ../client
       npm install
       npm run build
     startCommand: gunicorn app:app
