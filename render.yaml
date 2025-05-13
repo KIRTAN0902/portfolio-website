@@ -2,8 +2,11 @@ services:
   - type: web
     name: portfolio-web
     env: python
-    buildCommand: "cd client && npm install && npm run build"
-    startCommand: "gunicorn --access-logfile - --error-logfile - app:app"
+    buildCommand: |
+      cd client
+      npm install
+      npm run build
+    startCommand: gunicorn app:app
     workingDir: server
     buildFilter:
       paths:

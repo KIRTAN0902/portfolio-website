@@ -7,8 +7,10 @@ import os
 # ✅ Load environment variables
 load_dotenv()
 
-# ✅ Resolve absolute path to 'dist' directory
-DIST_DIR = Path(__file__).resolve().parent / "dist"
+# ✅ Use absolute path to locate the correct 'dist' directory
+# This points to /opt/render/project/server/dist, bypassing /src
+PROJECT_ROOT = Path(__file__).resolve().parents[2]  # Go up 2 levels
+DIST_DIR = PROJECT_ROOT / "server" / "dist"
 
 # ✅ Initialize Flask app
 app = Flask(__name__, static_folder=str(DIST_DIR), static_url_path='')
@@ -38,7 +40,7 @@ def handle_error(error):
     message = str(error) or "Internal Server Error"
     return jsonify({"success": False, "message": message}), status_code
 
-# 🚀 Run the Flask app (only locally, not used in Render/Gunicorn)
+# 🚀 Run the Flask app locally (not in production)
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
