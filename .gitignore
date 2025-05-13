@@ -1,6 +1,5 @@
 # Node.js
 client/node_modules/
-client/dist/
 client/.next/
 
 # Logs
@@ -42,6 +41,7 @@ client/.DS_Store
 Thumbs.db
 
 # Build artifacts
-server/dist/
+server/dist/  # ✅ DO NOT track this — it’s built during deploy
+client/dist/
 *.tar.gz
 *.zip
