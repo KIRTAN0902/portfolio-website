@@ -41,13 +41,17 @@ const config: Config = {
         'destructive-foreground': 'hsl(var(--destructive-foreground))',
         ring: 'hsl(var(--ring))',
       },
+      fontFamily: {
+        pixel: ['"Press Start 2P"', 'cursive'],
+        'pixel-text': ['"VT323"', 'monospace'],
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
       screens: {
-        'xs': '480px', // ✅ Add extra small screen breakpoint
+        xs: '480px',
       },
     },
   },

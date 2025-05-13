@@ -68,42 +68,42 @@ const Contact = () => {
       </div>
 
       <div className="text-center mt-10">
-  <h2 className="font-pixel text-3xl text-black">Contact Me</h2>
-  <div className="flex justify-center space-x-6 mt-4">
-    <a
-      href="mailto:kirtan.webdev@gmail.com"
-      className="font-pixel text-lg text-black underline hover:text-blue-600"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Email
-    </a>
-    <a
-      href="https://github.com/KIRTAN0902"
-      className="font-pixel text-lg text-black underline hover:text-gray-700"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      GitHub
-    </a>
-    <a
-      href="https://www.instagram.com/kirtans09/?utm_source=ig_web_button_share_sheet"
-      className="font-pixel text-lg text-black underline hover:text-pink-600"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Instagram
-    </a>
-    <a
-      href="https://www.linkedin.com/in/kirtan-shah-b77792272/"
-      className="font-pixel text-lg text-black underline hover:text-blue-800"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      LinkedIn
-    </a>
-  </div>
-</div>
+        <h2 className="font-pixel text-3xl text-black">Contact Me</h2>
+        <div className="flex flex-col md:flex-row items-center justify-center md:space-x-6 space-y-4 md:space-y-0 mt-4">
+          <a
+            href="mailto:kirtan.webdev@gmail.com"
+            className="font-pixel text-lg text-black underline hover:text-blue-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Email
+          </a>
+          <a
+            href="https://github.com/KIRTAN0902"
+            className="font-pixel text-lg text-black underline hover:text-gray-700"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.instagram.com/kirtans09/?utm_source=ig_web_button_share_sheet"
+            className="font-pixel text-lg text-black underline hover:text-pink-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kirtan-shah-b77792272/"
+            className="font-pixel text-lg text-black underline hover:text-blue-800"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
     </section>
   );
 };
